@@ -1,3 +1,4 @@
+// package Day3;
 import java.util.Scanner;
 public class Day3Q5 {
     public static void main(String[] args) {
