@@ -1,46 +1,45 @@
-package Day6.program2;
+package Day8.program2;
 
 import java.util.Scanner;
 
-class Animal {
+class Person {
     private String name;
-    private String species;
+    private int age;
 
-    public Animal (String name, String species) {
+    public Person() {
+        name = "Unknown";
+        age = 0;
+    }
+
+    public Person (String name, int age) {
         this.name = name;
-        this.species = species;
+        this.age = age;
     }
 
-    void printDetails() {
-        System.out.println("Name: " + name);
-        System.out.println("Species: " + species);
-    }
 }
 
-class Dog extends Animal{
-    private String breed;
+class Student extends Person {
+    private int StudentId;
+    public Student (String name, int age, int StudentId) {
+        super(name,age);
+        this.StudentId = StudentId;
 
-    public Dog (String name, String species, String breed) {
-        super(name,species);
-        this.breed = breed;
+        System.out.println("Name : " + name);
+        System.out.println("Age : " + age);
+        System.out.println("StudenId : " + StudentId);
     }
-    void printDetails() {
-        super.printDetails();
-        System.out.println("Breed: " + breed);
-    }
+
 }
-
 public class Que2 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter name: ");
+        System.out.print("Enter name : ");
         String name = sc.nextLine();
-        System.out.println("Enter species: ");
-        String species = sc.nextLine();
-        System.out.println("Enter breed: ");
-        String breed = sc.nextLine();
-        Dog d = new Dog(name, species, breed);
-        d.printDetails();        
+        System.out.print("Enter age : ");
+        int age = sc.nextInt();
+        System.out.print("Enter StudentId : ");
+        int StudentId = sc.nextInt();
+        Student student = new Student(name, age, StudentId);
         sc.close();
     }
 }
